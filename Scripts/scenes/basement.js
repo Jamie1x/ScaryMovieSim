@@ -22,26 +22,31 @@ var scenes;
             this._gameLabel = new objects.Label("Basement filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
             this.addChild(this._gameLabel);
             // Create button for scene and add to Game Scene container. Register for onclick event
-            this._monopolyButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
-            this.addChild(this._monopolyButton);
-            this._monopolyButton.on("click", this._onMonopolyButtonClick, this);
-            this._ouijaButton = new objects.Button("Start", config.Screen.CENTER_X + 200, config.Screen.CENTER_Y + 180);
-            this.addChild(this._ouijaButton);
-            this._ouijaButton.on("click", this._onOuijaButtonClick, this);
+            this._policeButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
+            this.addChild(this._policeButton);
+            this._policeButton.on("click", this._onPoliceButtonClick, this);
+            this._murdererButton = new objects.Button("Start", config.Screen.CENTER_X + 200, config.Screen.CENTER_Y + 180);
+            this.addChild(this._murdererButton);
+            this._murdererButton.on("click", this._onMurdererButtonClick, this);
             // Add gamescene to main stage container. 
             stage.addChild(this);
         };
         Basement.prototype.update = function () {
             // Update objects
         };
-        Basement.prototype._onMonopolyButtonClick = function (event) {
+        Basement.prototype._onPoliceButtonClick = function (event) {
             // Set global variable to Menu Scene and call changescene function
-            scene = config.Scene.BUDHOUSE;
+            if (hasKnife) {
+                scene = config.Scene.POLICEBAD;
+            }
+            else {
+                scene = config.Scene.POLICEGOOD;
+            }
             changeScene();
         };
-        Basement.prototype._onOuijaButtonClick = function (event) {
+        Basement.prototype._onMurdererButtonClick = function (event) {
             // Set global variable to Menu Scene and call changescene function
-            scene = config.Scene.MANSION;
+            scene = config.Scene.MURDERER;
             changeScene();
         };
         return Basement;

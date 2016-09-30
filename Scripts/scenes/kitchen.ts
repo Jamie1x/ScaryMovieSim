@@ -20,6 +20,8 @@ module scenes {
             // Add objects to the scene
             console.log("Game scene started");
 
+            hasKnife = true;
+
             // Create Label for scene and add to Game Scene container
             this._gameLabel = new objects.Label("Kitchen filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
             this.addChild(this._gameLabel);

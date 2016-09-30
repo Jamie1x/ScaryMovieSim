@@ -41,7 +41,12 @@ var scenes;
         };
         Murderer.prototype._onFightButtonClick = function (event) {
             // Set global variable to Menu Scene and call changescene function
-            scene = config.Scene.MURDERED;
+            if (hasKnife && isPossessed) {
+                scene = config.Scene.VICTORY;
+            }
+            else {
+                scene = config.Scene.MURDERED;
+            }
             changeScene();
         };
         return Murderer;

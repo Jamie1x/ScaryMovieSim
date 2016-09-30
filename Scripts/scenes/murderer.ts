@@ -7,16 +7,16 @@ module scenes {
     export class Murderer extends objects.Scene {
 
         // PRIVATE VARIABLES
-        private _gameLabel : objects.Label;
-        private _runButton : objects.Button;
-        private _fightButton : objects.Button;        
+        private _gameLabel: objects.Label;
+        private _runButton: objects.Button;
+        private _fightButton: objects.Button;
 
         constructor() {
             super();
         }
 
         // PUBLIC FUNCTIONS
-        public start() : void {
+        public start(): void {
             // Add objects to the scene
             console.log("Game scene started");
 
@@ -37,19 +37,24 @@ module scenes {
             stage.addChild(this);
         }
 
-        public update() : void {
+        public update(): void {
             // Update objects
         }
 
-        private _onRunButtonClick(event : createjs.MouseEvent) {
+        private _onRunButtonClick(event: createjs.MouseEvent) {
             // Set global variable to Menu Scene and call changescene function
             scene = config.Scene.MURDERED;
             changeScene();
         }
 
-        private _onFightButtonClick(event : createjs.MouseEvent) {
+        private _onFightButtonClick(event: createjs.MouseEvent) {
             // Set global variable to Menu Scene and call changescene function
-            scene = config.Scene.MURDERED;
+            if (hasKnife && isPossessed) {
+                scene = config.Scene.VICTORY;
+            }
+            else {
+                scene = config.Scene.MURDERED;
+            }
             changeScene();
         }
     }

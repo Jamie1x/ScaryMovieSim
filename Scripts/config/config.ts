@@ -17,6 +17,9 @@ module config {
         public static POLICEGOOD : number = 11;
         public static POLICEBAD : number = 12;
         public static POSSESSED : number = 13;
+        public static GRAVEYARD : number = 14;
+        public static VICTORY : number = 15;
+        public static DOOMSDAY : number = 16;
     }
 
     export class Screen {

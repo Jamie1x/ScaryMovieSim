@@ -9,17 +9,17 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var scenes;
 (function (scenes) {
-    var PoliceBad = (function (_super) {
-        __extends(PoliceBad, _super);
-        function PoliceBad() {
+    var Doomsday = (function (_super) {
+        __extends(Doomsday, _super);
+        function Doomsday() {
             _super.call(this);
         }
         // PUBLIC FUNCTIONS
-        PoliceBad.prototype.start = function () {
+        Doomsday.prototype.start = function () {
             // Add objects to the scene
             console.log("Game scene started");
             // Create Label for scene and add to Game Scene container
-            this._gameLabel = new objects.Label("bad cop filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
+            this._gameLabel = new objects.Label("Doomsday filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
             this.addChild(this._gameLabel);
             // Create button for scene and add to Game Scene container. Register for onclick event
             this._menuButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
@@ -28,16 +28,16 @@ var scenes;
             // Add gamescene to main stage container. 
             stage.addChild(this);
         };
-        PoliceBad.prototype.update = function () {
+        Doomsday.prototype.update = function () {
             // Update objects
         };
-        PoliceBad.prototype._onMenuButtonClick = function (event) {
+        Doomsday.prototype._onMenuButtonClick = function (event) {
             // Set global variable to Menu Scene and call changescene function
             scene = config.Scene.MENU;
             changeScene();
         };
-        return PoliceBad;
+        return Doomsday;
     })(objects.Scene);
-    scenes.PoliceBad = PoliceBad;
+    scenes.Doomsday = Doomsday;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=policeBad.js.map
+//# sourceMappingURL=doomsday.js.map

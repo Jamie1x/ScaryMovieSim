@@ -5,6 +5,8 @@ var canvas;
 var stage;
 var currentScene;
 var scene;
+var hasKnife = false;
+var isPossessed = false;
 // Game scenes
 var menuScene;
 var instructionScene;
@@ -114,6 +116,21 @@ function changeScene() {
             stage.removeAllChildren();
             currentScene = new scenes.Possessed;
             console.log("Starting POSSESSED scene");
+            break;
+        case config.Scene.GRAVEYARD:
+            stage.removeAllChildren();
+            currentScene = new scenes.Graveyard;
+            console.log("Starting GRAVEYARD scene");
+            break;
+        case config.Scene.VICTORY:
+            stage.removeAllChildren();
+            currentScene = new scenes.Victory;
+            console.log("Starting VICTORY scene");
+            break;
+        case config.Scene.DOOMSDAY:
+            stage.removeAllChildren();
+            currentScene = new scenes.Doomsday;
+            console.log("Starting DOOMSDAY scene");
             break;
     }
 }

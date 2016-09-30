@@ -22,26 +22,31 @@ var scenes;
             this._gameLabel = new objects.Label("Monopoly filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
             this.addChild(this._gameLabel);
             // Create button for scene and add to Game Scene container. Register for onclick event
-            this._monopolyButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
-            this.addChild(this._monopolyButton);
-            this._monopolyButton.on("click", this._onMonopolyButtonClick, this);
-            this._ouijaButton = new objects.Button("Start", config.Screen.CENTER_X + 200, config.Screen.CENTER_Y + 180);
-            this.addChild(this._ouijaButton);
-            this._ouijaButton.on("click", this._onOuijaButtonClick, this);
+            this._graveyardButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
+            this.addChild(this._graveyardButton);
+            this._graveyardButton.on("click", this._onGraveyardButtonClick, this);
+            this._policeButton = new objects.Button("Start", config.Screen.CENTER_X + 200, config.Screen.CENTER_Y + 180);
+            this.addChild(this._policeButton);
+            this._policeButton.on("click", this._onPoliceButtonClick, this);
             // Add gamescene to main stage container. 
             stage.addChild(this);
         };
         Monopoly.prototype.update = function () {
             // Update objects
         };
-        Monopoly.prototype._onMonopolyButtonClick = function (event) {
+        Monopoly.prototype._onGraveyardButtonClick = function (event) {
             // Set global variable to Menu Scene and call changescene function
-            scene = config.Scene.BUDHOUSE;
+            scene = config.Scene.GRAVEYARD;
             changeScene();
         };
-        Monopoly.prototype._onOuijaButtonClick = function (event) {
+        Monopoly.prototype._onPoliceButtonClick = function (event) {
             // Set global variable to Menu Scene and call changescene function
-            scene = config.Scene.MANSION;
+            if (hasKnife) {
+                scene = config.Scene.POLICEBAD;
+            }
+            else {
+                scene = config.Scene.POLICEGOOD;
+            }
             changeScene();
         };
         return Monopoly;

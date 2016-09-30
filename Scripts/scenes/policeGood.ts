@@ -20,7 +20,7 @@ module scenes {
             console.log("Game scene started");
 
             // Create Label for scene and add to Game Scene container
-            this._gameLabel = new objects.Label("Basement filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
+            this._gameLabel = new objects.Label("Good cop filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
             this.addChild(this._gameLabel);
 
             // Create button for scene and add to Game Scene container. Register for onclick event

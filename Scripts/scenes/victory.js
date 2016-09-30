@@ -9,17 +9,17 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var scenes;
 (function (scenes) {
-    var PoliceBad = (function (_super) {
-        __extends(PoliceBad, _super);
-        function PoliceBad() {
+    var Victory = (function (_super) {
+        __extends(Victory, _super);
+        function Victory() {
             _super.call(this);
         }
         // PUBLIC FUNCTIONS
-        PoliceBad.prototype.start = function () {
+        Victory.prototype.start = function () {
             // Add objects to the scene
             console.log("Game scene started");
             // Create Label for scene and add to Game Scene container
-            this._gameLabel = new objects.Label("bad cop filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
+            this._gameLabel = new objects.Label("Victory filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
             this.addChild(this._gameLabel);
             // Create button for scene and add to Game Scene container. Register for onclick event
             this._menuButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
@@ -28,16 +28,16 @@ var scenes;
             // Add gamescene to main stage container. 
             stage.addChild(this);
         };
-        PoliceBad.prototype.update = function () {
+        Victory.prototype.update = function () {
             // Update objects
         };
-        PoliceBad.prototype._onMenuButtonClick = function (event) {
+        Victory.prototype._onMenuButtonClick = function (event) {
             // Set global variable to Menu Scene and call changescene function
-            scene = config.Scene.MENU;
+            scene = config.Scene.DOOMSDAY;
             changeScene();
         };
-        return PoliceBad;
+        return Victory;
     })(objects.Scene);
-    scenes.PoliceBad = PoliceBad;
+    scenes.Victory = Victory;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=policeBad.js.map
+//# sourceMappingURL=victory.js.map

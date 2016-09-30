@@ -8,8 +8,8 @@ module scenes {
 
         // PRIVATE VARIABLES
         private _gameLabel : objects.Label;
-        private _monopolyButton : objects.Button;
-        private _ouijaButton : objects.Button;        
+        private _possessedButton : objects.Button;
+        private _basementButton : objects.Button;        
 
         constructor() {
             super();
@@ -25,13 +25,13 @@ module scenes {
             this.addChild(this._gameLabel);
 
             // Create button for scene and add to Game Scene container. Register for onclick event
-            this._monopolyButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
-            this.addChild(this._monopolyButton);
-            this._monopolyButton.on("click", this._onMonopolyButtonClick, this);
+            this._possessedButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
+            this.addChild(this._possessedButton);
+            this._possessedButton.on("click", this._onPossessedButtonClick, this);
 
-            this._ouijaButton = new objects.Button("Start", config.Screen.CENTER_X + 200, config.Screen.CENTER_Y + 180);
-            this.addChild(this._ouijaButton);
-            this._ouijaButton.on("click", this._onOuijaButtonClick, this);
+            this._basementButton = new objects.Button("Start", config.Screen.CENTER_X + 200, config.Screen.CENTER_Y + 180);
+            this.addChild(this._basementButton);
+            this._basementButton.on("click", this._onBasementButtonClick, this);
 
             // Add gamescene to main stage container. 
             stage.addChild(this);
@@ -41,15 +41,16 @@ module scenes {
             // Update objects
         }
 
-        private _onMonopolyButtonClick(event : createjs.MouseEvent) {
+        private _onPossessedButtonClick(event : createjs.MouseEvent) {
             // Set global variable to Menu Scene and call changescene function
-            scene = config.Scene.BUDHOUSE;
+            scene = config.Scene.POSSESSED;
             changeScene();
         }
 
-        private _onOuijaButtonClick(event : createjs.MouseEvent) {
+        private _onBasementButtonClick(event : createjs.MouseEvent) {
             // Set global variable to Menu Scene and call changescene function
-            scene = config.Scene.MANSION;
+            isPossessed = true;
+            scene = config.Scene.BASEMENT;
             changeScene();
         }
     }

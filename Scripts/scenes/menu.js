@@ -17,6 +17,8 @@ var scenes;
         }
         Menu.prototype.start = function () {
             console.log("Menu Scene Started");
+            hasKnife = false;
+            isPossessed = false;
             this._menuLabel = new objects.Label("Main Menu", "60px Consolar", "0x000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
             this.addChild(this._menuLabel);
             // Add button to scene. Register for click callback function

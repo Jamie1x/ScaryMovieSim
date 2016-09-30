@@ -2,42 +2,44 @@
     Scene  module to group all user-defined scenes  under the same "namespace aka module"
     Game scene that contains all assets and functionality associated with the game itself
 */
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var scenes;
-(function (scenes) {
-    var PoliceBad = (function (_super) {
-        __extends(PoliceBad, _super);
-        function PoliceBad() {
-            _super.call(this);
+
+module scenes {
+    export class Doomsday extends objects.Scene {
+
+        // PRIVATE VARIABLES
+        private _gameLabel : objects.Label;
+        private _menuButton : objects.Button;
+
+        constructor() {
+            super();
         }
+
         // PUBLIC FUNCTIONS
-        PoliceBad.prototype.start = function () {
+        public start() : void {
             // Add objects to the scene
             console.log("Game scene started");
+
             // Create Label for scene and add to Game Scene container
-            this._gameLabel = new objects.Label("bad cop filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
+            this._gameLabel = new objects.Label("Doomsday filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
             this.addChild(this._gameLabel);
+
             // Create button for scene and add to Game Scene container. Register for onclick event
             this._menuButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
             this.addChild(this._menuButton);
             this._menuButton.on("click", this._onMenuButtonClick, this);
+
             // Add gamescene to main stage container. 
             stage.addChild(this);
-        };
-        PoliceBad.prototype.update = function () {
+        }
+
+        public update() : void {
             // Update objects
-        };
-        PoliceBad.prototype._onMenuButtonClick = function (event) {
+        }
+
+        private _onMenuButtonClick(event : createjs.MouseEvent) {
             // Set global variable to Menu Scene and call changescene function
             scene = config.Scene.MENU;
             changeScene();
-        };
-        return PoliceBad;
-    })(objects.Scene);
-    scenes.PoliceBad = PoliceBad;
-})(scenes || (scenes = {}));
-//# sourceMappingURL=policeBad.js.map
+        }
+    }
+}

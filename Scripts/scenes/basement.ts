@@ -8,8 +8,8 @@ module scenes {
 
         // PRIVATE VARIABLES
         private _gameLabel : objects.Label;
-        private _monopolyButton : objects.Button;
-        private _ouijaButton : objects.Button;        
+        private _policeButton : objects.Button;
+        private _murdererButton : objects.Button;        
 
         constructor() {
             super();
@@ -25,13 +25,13 @@ module scenes {
             this.addChild(this._gameLabel);
 
             // Create button for scene and add to Game Scene container. Register for onclick event
-            this._monopolyButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
-            this.addChild(this._monopolyButton);
-            this._monopolyButton.on("click", this._onMonopolyButtonClick, this);
+            this._policeButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
+            this.addChild(this._policeButton);
+            this._policeButton.on("click", this._onPoliceButtonClick, this);
 
-            this._ouijaButton = new objects.Button("Start", config.Screen.CENTER_X + 200, config.Screen.CENTER_Y + 180);
-            this.addChild(this._ouijaButton);
-            this._ouijaButton.on("click", this._onOuijaButtonClick, this);
+            this._murdererButton = new objects.Button("Start", config.Screen.CENTER_X + 200, config.Screen.CENTER_Y + 180);
+            this.addChild(this._murdererButton);
+            this._murdererButton.on("click", this._onMurdererButtonClick, this);
 
             // Add gamescene to main stage container. 
             stage.addChild(this);
@@ -41,15 +41,20 @@ module scenes {
             // Update objects
         }
 
-        private _onMonopolyButtonClick(event : createjs.MouseEvent) {
+        private _onPoliceButtonClick(event : createjs.MouseEvent) {
             // Set global variable to Menu Scene and call changescene function
-            scene = config.Scene.BUDHOUSE;
+            if(hasKnife){
+                scene = config.Scene.POLICEBAD;
+            }
+            else{
+                scene = config.Scene.POLICEGOOD;
+            }
             changeScene();
         }
 
-        private _onOuijaButtonClick(event : createjs.MouseEvent) {
+        private _onMurdererButtonClick(event : createjs.MouseEvent) {
             // Set global variable to Menu Scene and call changescene function
-            scene = config.Scene.MANSION;
+            scene = config.Scene.MURDERER;
             changeScene();
         }
     }

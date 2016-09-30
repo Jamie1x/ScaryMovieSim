@@ -17,5 +17,8 @@
 /// <reference path="../scenes/murdered.ts" />
 /// <reference path="../scenes/policeGood.ts" />
 /// <reference path="../scenes/policeBad.ts" />
-/// <reference path="../scenes/possessed.ts" /> 
+/// <reference path="../scenes/possessed.ts" />
+/// <reference path="../scenes/graveyard.ts" />
+/// <reference path="../scenes/victory.ts" />
+/// <reference path="../scenes/doomsday.ts" /> 
 //# sourceMappingURL=_reference.js.map

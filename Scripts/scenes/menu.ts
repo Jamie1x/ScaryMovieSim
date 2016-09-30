@@ -21,6 +21,9 @@ module scenes {
         public start() : void {
             console.log("Menu Scene Started");
 
+            hasKnife = false;
+            isPossessed = false;
+
             this._menuLabel = new objects.Label("Main Menu","60px Consolar", "0x000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
             this.addChild(this._menuLabel);
 
