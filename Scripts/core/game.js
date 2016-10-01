@@ -12,8 +12,49 @@ var menuScene;
 var instructionScene;
 // Preload Assets required
 var assetData = [
-    { id: "Start", src: "../../Assets/images/Start.png" },
-    { id: "Back", src: "../../Assets/images/Back.png" }
+    { id: "Start", src: "../../Assets/images/Start.jpg" },
+    { id: "Menu", src: "../../Assets/images/menu.jpg" },
+    { id: "Instructions", src: "../../Assets/images/instructions.jpg" },
+    { id: "Intro", src: "../../Assets/images/intro.jpg" },
+    { id: "Intro-Mansion", src: "../../Assets/images/intro-mansion.jpg" },
+    { id: "Intro-House", src: "../../Assets/images/intro-house.jpg" },
+    { id: "House", src: "../../Assets/images/budHouse.jpg" },
+    { id: "House-Monopoly", src: "../../Assets/images/house-monopoly.jpg" },
+    { id: "House-Ouija", src: "../../Assets/images/house-ouija.jpg" },
+    { id: "Monopoly", src: "../../Assets/images/monopoly.jpg" },
+    { id: "Monopoly-Cops", src: "../../Assets/images/monopoly-cops.jpg" },
+    { id: "Monopoly-Graveyard", src: "../../Assets/images/monopoly-graveyard.jpg" },
+    { id: "Graveyard", src: "../../Assets/images/graveyard.jpg" },
+    { id: "Graveyard-Menu", src: "../../Assets/images/graveyard-menu.jpg" },
+    { id: "CopsGood", src: "../../Assets/images/copsgood.jpg" },
+    { id: "CopsBad", src: "../../Assets/images/copsbad.jpg" },
+    { id: "Cops-Menu", src: "../../Assets/images/cops-menu.jpg" },
+    { id: "CopsBad-Menu", src: "../../Assets/images/copsbad-menu.jpg" },
+    { id: "Ouija", src: "../../Assets/images/ouija.jpg" },
+    { id: "Ouija-Basement", src: "../../Assets/images/ouija-basement.jpg" },
+    { id: "Ouija-Possessed", src: "../../Assets/images/ouija-possessed.jpg" },
+    { id: "Possessed", src: "../../Assets/images/possessed.jpg" },
+    { id: "Possessed-Menu", src: "../../Assets/images/possessed-menu.jpg" },
+    { id: "Mansion", src: "../../Assets/images/mansion.jpg" },
+    { id: "Mansion-Basement", src: "../../Assets/images/mansion-basement.jpg" },
+    { id: "Mansion-Kitchen", src: "../../Assets/images/mansion-kitchen.jpg" },
+    { id: "Kitchen", src: "../../Assets/images/kitchen.jpg" },
+    { id: "Kitchen-Basement", src: "../../Assets/images/kitchen-basement.jpg" },
+    { id: "Kitchen-House", src: "../../Assets/images/kitchen-house.jpg" },
+    { id: "Basement", src: "../../Assets/images/basement.jpg" },
+    { id: "Basement-Murderer", src: "../../Assets/images/basement-murderer.jpg" },
+    { id: "Basement-Cops", src: "../../Assets/images/basement-cops.jpg" },
+    { id: "Murderer", src: "../../Assets/images/murderer.jpg" },
+    { id: "Murderer-Murdered", src: "../../Assets/images/murderer-murdered.jpg" },
+    { id: "Murderer-Victory", src: "../../Assets/images/murderer-victory.jpg" },
+    { id: "Murdered", src: "../../Assets/images/murdered.jpg" },
+    { id: "Murdered-Menu", src: "../../Assets/images/murdered-menu.jpg" },
+    { id: "Victory", src: "../../Assets/images/victory.jpg" },
+    { id: "Victory-Doomsday", src: "../../Assets/images/victory-doomsday.jpg" },
+    { id: "Doomsday", src: "../../Assets/images/doomsday.jpg" },
+    { id: "Doomsday-Boom", src: "../../Assets/images/doomsday-boom.jpg" },
+    { id: "Boom", src: "../../Assets/images/boom.jpg" },
+    { id: "Boom-Menu", src: "../../Assets/images/boom-menu.jpg" }
 ];
 function preload() {
     // Create a queue for assets being loaded
@@ -131,6 +172,11 @@ function changeScene() {
             stage.removeAllChildren();
             currentScene = new scenes.Doomsday;
             console.log("Starting DOOMSDAY scene");
+            break;
+        case config.Scene.BOOM:
+            stage.removeAllChildren();
+            currentScene = new scenes.Boom;
+            console.log("Starting BOOM scene");
             break;
     }
 }

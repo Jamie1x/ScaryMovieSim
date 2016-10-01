@@ -7,7 +7,7 @@ module scenes {
     export class Monopoly extends objects.Scene {
 
         // PRIVATE VARIABLES
-        private _gameLabel: objects.Label;
+        private _gameLabel: createjs.Bitmap;
         private _graveyardButton: objects.Button;
         private _policeButton: objects.Button;
 
@@ -21,15 +21,15 @@ module scenes {
             console.log("Game scene started");
 
             // Create Label for scene and add to Game Scene container
-            this._gameLabel = new objects.Label("Monopoly filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
+            this._gameLabel = new createjs.Bitmap(assets.getResult("Monopoly"));
             this.addChild(this._gameLabel);
 
             // Create button for scene and add to Game Scene container. Register for onclick event
-            this._graveyardButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
+            this._graveyardButton = new objects.Button("Monopoly-Graveyard", config.Screen.CENTER_X, config.Screen.CENTER_Y + 80);
             this.addChild(this._graveyardButton);
             this._graveyardButton.on("click", this._onGraveyardButtonClick, this);
 
-            this._policeButton = new objects.Button("Start", config.Screen.CENTER_X + 200, config.Screen.CENTER_Y + 180);
+            this._policeButton = new objects.Button("Monopoly-Cops", config.Screen.CENTER_X, config.Screen.CENTER_Y + 150);
             this.addChild(this._policeButton);
             this._policeButton.on("click", this._onPoliceButtonClick, this);
 

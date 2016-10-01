@@ -20,6 +20,7 @@ module config {
         public static GRAVEYARD : number = 14;
         public static VICTORY : number = 15;
         public static DOOMSDAY : number = 16;
+        public static BOOM : number = 17;        
     }
 
     export class Screen {

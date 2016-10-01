@@ -24,3 +24,4 @@
 /// <reference path="../scenes/graveyard.ts" />
 /// <reference path="../scenes/victory.ts" />
 /// <reference path="../scenes/doomsday.ts" />
+/// <reference path="../scenes/boom.ts" />

@@ -10,7 +10,7 @@ module scenes {
         // Label or bitmap
         // Button
         private _menuButton : objects.Button;
-        private _menuLabel : objects.Label;
+        private _menuLabel : createjs.Bitmap;
 
         // Menu Class Contructor
         constructor()
@@ -24,11 +24,11 @@ module scenes {
             hasKnife = false;
             isPossessed = false;
 
-            this._menuLabel = new objects.Label("Main Menu","60px Consolar", "0x000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
+            this._menuLabel = new createjs.Bitmap(assets.getResult("Menu"));
             this.addChild(this._menuLabel);
 
             // Add button to scene. Register for click callback function
-            this._menuButton = new objects.Button("Start", config.Screen.CENTER_X, config.Screen.CENTER_Y + 180);
+            this._menuButton = new objects.Button("Start", config.Screen.CENTER_X, config.Screen.CENTER_Y + 115);
             this.addChild(this._menuButton);
             this._menuButton.on("click", this._startButtonClick, this);
 

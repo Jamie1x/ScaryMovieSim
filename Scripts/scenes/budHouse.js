@@ -19,13 +19,13 @@ var scenes;
             // Add objects to the scene
             console.log("Game scene started");
             // Create Label for scene and add to Game Scene container
-            this._gameLabel = new objects.Label("BudHouse filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
+            this._gameLabel = new createjs.Bitmap(assets.getResult("House"));
             this.addChild(this._gameLabel);
             // Create button for scene and add to Game Scene container. Register for onclick event
-            this._monopolyButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
+            this._monopolyButton = new objects.Button("House-Monopoly", config.Screen.CENTER_X, config.Screen.CENTER_Y + 80);
             this.addChild(this._monopolyButton);
             this._monopolyButton.on("click", this._onMonopolyButtonClick, this);
-            this._ouijaButton = new objects.Button("Start", config.Screen.CENTER_X + 200, config.Screen.CENTER_Y + 180);
+            this._ouijaButton = new objects.Button("House-Ouija", config.Screen.CENTER_X, config.Screen.CENTER_Y + 150);
             this.addChild(this._ouijaButton);
             this._ouijaButton.on("click", this._onOuijaButtonClick, this);
             // Add gamescene to main stage container. 

@@ -23,6 +23,7 @@ var config;
         Scene.GRAVEYARD = 14;
         Scene.VICTORY = 15;
         Scene.DOOMSDAY = 16;
+        Scene.BOOM = 17;
         return Scene;
     })();
     config.Scene = Scene;

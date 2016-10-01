@@ -7,7 +7,7 @@ module scenes {
     export class Instructions extends objects.Scene {
 
         // PRIVATE VARIABLES
-        private _gameLabel : objects.Label;
+        private _gameLabel : createjs.Bitmap;
         private _gameButton : objects.Button;
 
         constructor() {
@@ -20,7 +20,7 @@ module scenes {
             console.log("Game scene started");
 
             // Create Label for scene and add to Game Scene container
-            this._gameLabel = new objects.Label("instructions filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
+            this._gameLabel = new createjs.Bitmap(assets.getResult("Instructions"));
             this.addChild(this._gameLabel);
 
             // Create button for scene and add to Game Scene container. Register for onclick event

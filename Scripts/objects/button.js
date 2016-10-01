@@ -17,7 +17,7 @@ var objects;
             this.x = x;
             this.y = y;
             // Set the size of the button
-            this.width = 150;
+            this.width = 540;
             this.height = 50;
             // Set the registration point of the button. This is used for transformations
             this.regX = this.width * 0.5;

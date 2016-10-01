@@ -19,10 +19,10 @@ var scenes;
             // Add objects to the scene
             console.log("Game scene started");
             // Create Label for scene and add to Game Scene container
-            this._gameLabel = new objects.Label("possessed filler", "20px Consolar", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y);
+            this._gameLabel = new createjs.Bitmap(assets.getResult("Possessed"));
             this.addChild(this._gameLabel);
             // Create button for scene and add to Game Scene container. Register for onclick event
-            this._menuButton = new objects.Button("Start", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 180);
+            this._menuButton = new objects.Button("Possessed-Menu", config.Screen.CENTER_X, config.Screen.CENTER_Y + 115);
             this.addChild(this._menuButton);
             this._menuButton.on("click", this._onMenuButtonClick, this);
             // Add gamescene to main stage container. 
